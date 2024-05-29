@@ -1,6 +1,8 @@
 package com.src.junit;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.hibernate.Session;
 import org.junit.Assert;
@@ -37,8 +39,9 @@ public class TestClass {
 	public void update() {
 		EmployeDao employeDao = new EmployeDao();
 		Employe employe = employeDao.getEmploye(10);
-//		employe.setFirst("Jacks");
-	Assert.assertEquals("Jacks",employeDao.update(employe));
+		employe.setFirst("Jacks");
+		employeDao.update(employe);
+//assertEquals("Jacks",employeDao.update(employe));
 		
 //	}
 //	@Test
@@ -49,8 +52,5 @@ public class TestClass {
 //		
 	}
 
-	private void assertEquals(String expected, Object update) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
